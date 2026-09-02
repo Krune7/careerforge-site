@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" data-version="v20.0.0">
+<html lang="zh-Hant" data-version="v18.14.2">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v20.0.0';
+      var EXPECTED_VER = 'v18.14.2';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -27,57 +27,11 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CareerForge 鑄途 · 香港高端個人成長顧問 · 身份·升學·職涯身價 · v20.0.0</title>
-<meta name="description" content="CareerForge 鑄途 — 香港高端個人成長顧問。4 大業務板塊：香港身份與續簽對標、赴港求職與職涯身價躍遷、海外與香港升學對標。">
+<title>CareerForge 鑄途 · 5 天 4 夜香港遊學團 · 暑假深度遊學</title>
+<meta name="description" content="CareerForge 5 天 4 夜香港遊學團 — 4 大核心模塊 + 500 強企業證書。多元主題（金融/科技/英語學術）任選，配套完善（住宿/接送/餐飲/安全）。">
 <link rel="icon" type="image/png" href="assets/icon.png">
-<!-- SEO / Social Sharing v20.0.0 -->
-<meta name="theme-color" content="#0B192C">
-<link rel="canonical" href="https://careerforgehk.com/">
-<link rel="alternate" hreflang="zh-Hant" href="https://careerforgehk.com/">
-<link rel="alternate" hreflang="zh-Hans" href="https://careerforgehk.com/index-cn.html">
-<link rel="alternate" hreflang="en" href="https://careerforgehk.com/index-en.html">
-<link rel="alternate" hreflang="x-default" href="https://careerforgehk.com/">
-<link rel="apple-touch-icon" href="/assets/icon.png">
-<link rel="manifest" href="/manifest.json">
-<meta property="og:title" content="CareerForge 鑄途 · 香港高端個人成長顧問">
-<meta property="og:description" content="CareerForge 鑄途 — 香港高端個人成長顧問。4 大業務板塊：香港身份與續簽對標、赴港求職與職涯身價躍遷、海外與香港升學對標、5 天 4 夜遊學團。">
-<meta property="og:image" content="https://careerforgehk.com/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://careerforgehk.com/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="CareerForge 鑄途">
-<meta property="og:locale" content="zh_HK">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CareerForge 鑄途 · 香港高端個人成長顧問">
-<meta name="twitter:description" content="4 大業務板塊：身份規劃 · 升學銜接 · 職涯增值 · 遊學團。SINCE 2006，3,000+ 家庭信賴。">
-<meta name="twitter:image" content="https://careerforgehk.com/og-image.jpg">
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "CareerForge 鑄途",
-  "url": "https://careerforgehk.com/",
-  "logo": "https://careerforgehk.com/assets/logo.png",
-  "description": "香港高端個人成長顧問，4 大業務板塊：香港身份與續簽對標、海外與香港升學對標、赴港求職與職涯身價躍遷、5 天 4 夜遊學團。",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Hong Kong",
-    "addressCountry": "HK"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+852-9696-6867",
-    "contactType": "Customer Service",
-    "areaServed": ["HK", "CN", "MO"],
-    "availableLanguage": ["zh-Hant", "zh-Hans", "en"]
-  },
-  "sameAs": []
-}
-</script>
 </head>
 <body>
 
@@ -240,7 +194,7 @@
 .v10-head.dark .lede { color: rgba(255,255,255,0.78); }
 
 /* ============ 3 PILLAR CARDS ============ */
-.v10-pillars { display: grid; grid-template-columns: 1fr; gap: 32px; grid-auto-rows: 1fr; }
+.v10-pillars { display: flex; flex-direction: column; gap: 32px; }
 .v10-pillar {
   background: var(--white);
   border: 1px solid var(--ink-100);
@@ -581,6 +535,168 @@
   letter-spacing: 0.02em;
 }
 
+/* ============ v18.14.1 — TOUR PAGE COMPONENTS ============ */
+/* v10-tracks: 4-col grid (icon + tag + h3 + p) — used for 4 modules + 8 outcomes */
+.v10-tracks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.v10-track {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.v10-track h3, .v10-track p { overflow-wrap: break-word; }
+.v10-track:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--gold);
+}
+.v10-track-icon {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  color: var(--gold);
+  border-radius: 10px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.v10-track-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold-600);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.v10-track h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 10px;
+  letter-spacing: 0.2px;
+  line-height: 1.35;
+}
+.v10-track p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ink-700);
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* v10-tour-mentor: mentor highlight box (white bg, gold border-left) */
+.v10-tour-mentor {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  align-items: center;
+  padding: 44px 48px;
+  border-left: 4px solid var(--gold);
+  background: linear-gradient(135deg, #f8f6f1 0%, #ffffff 100%);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow-card);
+  max-width: 880px;
+  margin: 0 auto;
+}
+.v10-tour-mentor-icon {
+  font-size: 4rem;
+  line-height: 1;
+}
+.v10-tour-mentor-body p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink-700);
+  margin: 0 0 16px;
+}
+.v10-tour-mentor-detail {
+  display: inline-block;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  padding: 8px 18px;
+  background: rgba(212,175,55,0.12);
+  border-radius: 999px;
+}
+
+/* v10-included-list: simple bullet, no cards (餐飲 deleted) */
+.v10-included-list {
+  list-style: none;
+  padding: 0;
+  margin: 40px auto 0;
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.v10-included-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 22px 28px;
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+.v10-included-item:hover {
+  border-color: var(--gold);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-card);
+}
+.v10-included-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+.v10-included-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.v10-included-body strong {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.2px;
+}
+.v10-included-body span {
+  font-size: 0.92rem;
+  color: var(--ink-500);
+  line-height: 1.5;
+}
+
+/* Mobile responsive for tour components */
+@media (max-width: 900px) {
+  .v10-tracks { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+  .v10-track { padding: 22px 18px; min-width: 0; }
+  .v10-track h3, .v10-track p { overflow-wrap: break-word; word-break: break-word; }
+  .v10-track-icon { width: 40px; height: 40px; font-size: 1rem; margin-bottom: 12px; }
+  .v10-track-tag { font-size: 0.62rem; letter-spacing: 0.14em; margin-bottom: 8px; }
+  .v10-track h3 { font-size: 1rem; margin: 0 0 6px; line-height: 1.3; }
+  .v10-track p { font-size: 0.82rem; line-height: 1.5; }
+  .v10-tour-mentor { grid-template-columns: 1fr; gap: 18px; padding: 28px 22px; text-align: center; }
+  .v10-tour-mentor-icon { font-size: 3rem; }
+  .v10-tour-mentor-body p { font-size: 0.95rem; }
+  .v10-included-item { grid-template-columns: auto 1fr; gap: 16px; padding: 16px 20px; }
+  .v10-included-emoji { font-size: 1.6rem; }
+  .v10-included-body strong { font-size: 0.95rem; }
+  .v10-included-body span { font-size: 0.85rem; }
+}
+
 /* ============ MOBILE ============ */
 @media (max-width: 900px) {
   .v10-hero { padding: 80px 0 64px; }
@@ -742,11 +858,10 @@ img, video, iframe, table { max-width: 100%; }
   grid-template-columns: auto 1fr auto;
   gap: 28px;
   align-items: center;
-  /* v20.0.2: Subtle off-white bg (lighter than cream) — text floats on top, bg recedes, no shadow */
-  background: linear-gradient(135deg, #FDFAF2 0%, #FAF5E8 100%);
-  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, rgba(212,175,55,0.10) 0%, rgba(212,175,55,0.02) 100%);
+  border: 1px solid var(--gold);
   border-radius: var(--radius);
-  padding: 36px 44px;
+  padding: 32px 40px;
   margin: 0 auto 56px;
   max-width: 980px;
   position: relative;
@@ -756,9 +871,9 @@ img, video, iframe, table { max-width: 100%; }
   content: "";
   position: absolute;
   top: 0; left: 0;
-  width: 4px;
+  width: 6px;
   height: 100%;
-  background: rgba(212, 175, 55, 0.55);
+  background: var(--gold);
 }
 .v10-tour-banner-flag {
   font-size: 2.5rem;
@@ -771,7 +886,7 @@ img, video, iframe, table { max-width: 100%; }
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: rgba(11, 25, 44, 0.78);  /* v20.0.1: navy 78% on cream = 6.5:1 contrast (was gold on cream = 2.56:1 fail) */
+  color: var(--gold);
   margin-bottom: 6px;
   text-transform: uppercase;
 }
@@ -779,21 +894,21 @@ img, video, iframe, table { max-width: 100%; }
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--navy);  /* v20.0.1: navy on cream = high contrast (was white on transparent navy) */
+  color: var(--white);
   margin: 0 0 8px;
   line-height: 1.3;
 }
 .v10-tour-banner p {
   font-size: 0.92rem;
-  color: rgba(11, 25, 44, 0.78);  /* v20.0.1: dark navy on cream (was white on transparent navy) */
+  color: rgba(255,255,255,0.78);
   margin: 0 0 10px;
   line-height: 1.55;
 }
 .v10-tour-banner-meta {
   display: inline-block;
   font-size: 0.82rem;
-  font-weight: 700;  /* v20.0.1: bumped from 600 → 700 for stronger emphasis on deadline */
-  color: var(--navy);  /* v20.0.1: navy on cream = 11:1 contrast (was gold on cream = 2.56:1 fail) */
+  font-weight: 600;
+  color: var(--gold);
   letter-spacing: 0.04em;
 }
 .v10-tour-banner-btn {
@@ -995,7 +1110,7 @@ img, video, iframe, table { max-width: 100%; }
   text-align: center;
 }
 
-/* v18.13 — learn-more button + breadcrumb (study tour funnel) */
+/* v18.14 — learn-more button + breadcrumb (study tour funnel) */
 .v10-tour-learn-more {
   text-align: center;
   margin-top: 36px;
@@ -1037,95 +1152,6 @@ img, video, iframe, table { max-width: 100%; }
   .v10-tour-outcome { font-size: 0.82rem; padding: 14px 14px; }
 }
 
-
-.v10-pillar--image {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  min-height: 420px;
-}
-
-.v10-pillar-bg {
-  position: absolute;
-  inset: 0;
-  background-image: var(--pillar-bg);
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-  transition: transform .6s ease;
-}
-
-.v10-pillar-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg,
-    rgba(11, 25, 44, 0.82) 0%,
-    rgba(11, 25, 44, 0.68) 50%,
-    rgba(11, 25, 44, 0.82) 100%
-  );
-  z-index: 1;
-}
-
-.v10-pillar-body,
-.v10-pillar-cta { position: relative; z-index: 2; }
-
-.v10-pillar--image .v10-pillar-num {
-  color: var(--gold-light, #E0C076) !important;
-}
-
-.v10-pillar--image .v10-pillar-title {
-  color: #FFFFFF !important;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  word-break: keep-all;
-  overflow-wrap: normal;
-}
-
-.v10-pillar--image .v10-pillar-desc {
-  color: rgba(255, 255, 255, 0.92) !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.v10-pillar--image .v10-pillar-cta {
-  background: rgba(255, 255, 255, 0.97) !important;
-  color: var(--navy) !important;
-  border: 1px solid rgba(255, 255, 255, 0.5) !important;
-}
-
-.v10-pillar--image:hover .v10-pillar-bg { transform: scale(1.05); }
-
-.v10-pillar--image:hover .v10-pillar-overlay {
-  background: linear-gradient(120deg,
-    rgba(11, 25, 44, 0.65) 0%,
-    rgba(11, 25, 44, 0.5) 50%,
-    rgba(11, 25, 44, 0.7) 100%
-  );
-}
-
-.v10-pillar--image:hover .v10-pillar-cta {
-  background: var(--gold-light, #E0C076) !important;
-  color: var(--navy) !important;
-  border-color: var(--gold) !important;
-}
-
-@media (max-width: 768px) {
-  .v10-pillar--image { min-height: 360px; }
-}
-
-@media (max-width: 480px) {
-  .v10-pillar--image { min-height: 320px; }
-}
-
-@media (max-width: 768px) {
-  .v10-pillar--image { min-height: 360px; }
-}
-
-@media (max-width: 480px) {
-  .v10-pillar--image { min-height: 320px; }
-}
-
 </style>
 
 <header class="site-header">
@@ -1140,7 +1166,7 @@ img, video, iframe, table { max-width: 100%; }
         <a href="immigration.html">身份規劃</a>
         <a href="education.html">升學規劃</a>
         <a href="career.html">求職身價</a>
-        <a href="tour.html">遊學團</a>
+        <a href="tour.html" class="active">遊學團</a>
         <a href="cases.html">客戶故事</a>
         <a href="#contact">聯絡我們</a>
       </div>
@@ -1160,206 +1186,188 @@ img, video, iframe, table { max-width: 100%; }
 
 <!-- ============ HERO (NAVY) ============ -->
 <section class="v10-hero">
-  <div class="decor decor-hero"></div>
   <div class="v10-container">
     <span class="v10-hero-eyebrow">
       <span class="v10-hero-eyebrow-dot"></span>
-      香港高端個人成長顧問 · SINCE 2006
+      STUDY TOUR · 內地學生專屬深度遊學
     </span>
     <h1 class="v10-hero-title">
-      與家庭同行，<br>
-      從身份到<span class="gold no-break">永居七年</span>。<br>
-      從事業到<span class="gold no-break">職涯身價</span>。
+      5 天 4 夜，<br>
+      <span class="gold no-break">香港遊學團</span>
     </h1>
-    <p class="v10-hero-sub">
-      CareerForge 鑄途 — 專注香港高才通、優才、專才、留學升港全週期陪跑。<br>
-      四條業務主線：身份對標、升學規劃、職涯身價躍遷、遊學團服務，每一條都為下一條鋪路。
-    </p>
+    <p class="v10-hero-sub">多元主題 × 4 大核心模塊 × 500 強企業證書 — 一次體驗，<br>看清未來 7 年的方向。</p>
     <div class="v10-hero-trust">
       <div class="v10-hero-trust-item">
-        <strong>3,000+</strong>
-        <span>累計服務家庭</span>
+        <strong>5 天 4 夜</strong>
+        <span>深度行程</span>
       </div>
       <div class="v10-hero-trust-item">
-        <strong>20 年</strong>
-        <span>立足香港行業經驗</span>
+        <strong>1 : 6</strong>
+        <span>師生比全程陪同</span>
       </div>
       <div class="v10-hero-trust-item">
-        <strong>7 年</strong>
-        <span>續簽到永居全程陪跑</span>
+        <strong>500 強</strong>
+        <span>企業高層親授</span>
       </div>
       <div class="v10-hero-trust-item">
-        <strong>4 大</strong>
-        <span>業務板塊全打通</span>
+        <strong>10–15</strong>
+        <span>人 1 組 Mentor 帶領</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 3 PILLARS (WHITE CARDS) ============ -->
-<section class="v10-section canvas" id="services">
+<!-- ============ 国慶限定 BANNER (NAVY GOLD ACCENT) ============ -->
+<section class="v10-section canvas tight" style="padding: 48px 0;">
   <div class="v10-container">
-    <div class="v10-head">
-      <span class="eyebrow">4 大業務板塊</span>
-      <h2>身份、升學、職涯身價，<br>同一 CareerForge 主線。</h2>
-      <p class="lede">把香港身份對標、海外與香港升學銜接、赴港求職身價躍遷打通成一條連續路徑 — 詳情請瀏覽各業務板塊頁面。</p>
-    </div>
-    <div class="v10-pillars">
-
-      <!-- Pillar 01 -->
-      <div class="v10-pillar v10-pillar--image" style="--pillar-bg: url('assets/pillars/web/01-immigration.jpg')">
-        <div class="v10-pillar-bg"></div>
-        <div class="v10-pillar-overlay"></div>
-        <div class="v10-pillar-body">
-          <span class="v10-pillar-num">PILLAR 01 · 身份規劃</span>
-          <h3 class="v10-pillar-title">香港身份與續簽對標</h3>
-          <p class="v10-pillar-desc">
-            
-            高才通 · 優才 · 專才 · 留學升港 — 4 條主流路徑全覆蓋。從首簽到 7 年永居，由專屬顧問全程陪跑。
-          </p>
-        </div>
-        <a href="immigration.html" class="v10-pillar-cta">了解詳情</a>
-      </div>
-
-      <!-- Pillar 02 -->
-      <div class="v10-pillar v10-pillar--image" style="--pillar-bg: url('assets/pillars/web/02-education.jpg')">
-        <div class="v10-pillar-bg"></div>
-        <div class="v10-pillar-overlay"></div>
-        <div class="v10-pillar-body">
-          <span class="v10-pillar-num">PILLAR 02 · 升學銜接</span>
-          <h3 class="v10-pillar-title">海外與香港升學對標</h3>
-          <p class="v10-pillar-desc">
-            
-            海外中學 / IB / A-Level / DSE ↔ 香港本地學校雙向銜接，配合家長簽證節奏推進子女升學路徑。
-          </p>
-        </div>
-        <a href="education.html" class="v10-pillar-cta">了解詳情</a>
-      </div>
-
-      <!-- Pillar 03 -->
-      <div class="v10-pillar v10-pillar--image" style="--pillar-bg: url('assets/pillars/web/03-career.jpg')">
-        <div class="v10-pillar-bg"></div>
-        <div class="v10-pillar-overlay"></div>
-        <div class="v10-pillar-body">
-          <span class="v10-pillar-num">PILLAR 03 · 職涯增值</span>
-          <h3 class="v10-pillar-title">赴港求職與職涯身價躍遷</h3>
-          <p class="v10-pillar-desc">
-            
-            協助專業人士在香港市場實現薪酬躍升、行業轉型與長期職涯身價增值。
-          </p>
-        </div>
-        <a href="career.html" class="v10-pillar-cta">了解詳情</a>
-      </div>
-
-      <!-- Pillar 04 -->
-      <div class="v10-pillar v10-pillar--image" style="--pillar-bg: url('assets/pillars/web/04-tour.jpg')">
-        <div class="v10-pillar-bg"></div>
-        <div class="v10-pillar-overlay"></div>
-        <div class="v10-pillar-body">
-          <span class="v10-pillar-num">PILLAR 04 · 遊學團</span>
-          <h3 class="v10-pillar-title">5 天 4 夜 · 香港遊學團</h3>
-          <p class="v10-pillar-desc">
-            
-            5 天 4 夜深度遊學 — 金融 · 科技 · 英語學術 3 大主題，500 強企業導師全程陪跑。
-          </p>
-        </div>
-        <a href="tour.html" class="v10-pillar-cta">了解詳情</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ STUDY TOUR (NAVY BG) — v18.9.0 ============ -->
-<section class="v10-section dark" id="study-tour">
-  <div class="decor decor-tour"></div>
-  <div class="v10-container">
-
-    <!-- HERO HEADER -->
-    <div class="v10-head dark">
-      <span class="eyebrow">5 天 4 夜 · 香港遊學團</span>
-      <h2>暑假來香港，<br>親身體驗國際大都會。</h2>
-      <p class="lede">為內地高中及大學生打造的深度遊學 — 多元主題 × 4 大核心模塊 × 500 強企業證書。</p>
-    </div>
-
-    <!-- 國慶限定 BANNER -->
     <div class="v10-tour-banner">
-      <div class="v10-tour-banner-flag">🇨🇳</div>
-      <div class="v10-tour-banner-body">
-        <span class="v10-tour-banner-eyebrow">國慶限定 · 限量招募</span>
-        <h3>國慶黃金週限定 · 香港遊學團</h3>
-        <p>內地高中及大學生專屬 — 與祖國同慶 + 親歷國際大都會</p>
-        <span class="v10-tour-banner-meta">⏰ 9 月 20 日截止報名</span>
+      <div class="v10-tour-banner-text">
+        <span class="v10-tour-banner-eyebrow">國慶限定團 · 限額招生</span>
+        <h3 class="v10-tour-banner-title">10 月 1 日開團</h3>
+        <span class="v10-tour-banner-pill">⏰ 9 月 20 日截止報名</span>
       </div>
       <a href="#contact" class="v10-cta-btn v10-tour-banner-btn">立即查詢國慶團</a>
     </div>
-
-    <!-- Learn-more button (v18.13 funnel — link to detail page) -->
-    <div class="v10-tour-learn-more">
-      <a href="tour.html" class="v10-cta-btn v10-cta-secondary">了解 5 天 4 夜完整行程</a>
-    </div>
-
   </div>
 </section>
 
-<!-- ============ TRUST GRID (NAVY BG) ============ -->
-<section class="v10-section dark">
-  <div class="decor decor-trust"></div>
+<!-- ============ 4 MODULES ============ -->
+<section class="v10-section canvas" id="modules">
   <div class="v10-container">
-    <div class="v10-head dark">
-      <span class="eyebrow">數字見證</span>
-      <h2>每一組數字，<br>都是一次人生路徑的躍遷。</h2>
-      <p class="lede">從首簽到永居 7 年陪跑，全程顧問 1 對 1 — 不只是數字，是真實家庭。</p>
+    <div class="v10-head">
+      <span class="eyebrow">5 天 4 夜行程結構</span>
+      <h2>4 大核心模塊，<br>從主題探索到升學規劃。</h2>
+      <p class="lede">5 天 4 夜的行程不是觀光 — 是系統性的體驗。每個模塊都有對應導師、企業場景與可帶走的成果。</p>
     </div>
-    <div class="v10-trust-grid">
-      <div class="v10-trust-card">
-        <span class="v10-trust-num">3,000+</span>
-        <span class="v10-trust-label">累計服務家庭<small>FAMILIES SERVED</small></span>
+    <div class="v10-tracks">
+      <div class="v10-track">
+        <span class="v10-track-icon">01</span>
+        <span class="v10-track-tag">主題探索</span>
+        <h3>主題探索</h3>
+        <p>從金融到科技、從商業到文化 — 親身體驗多元主題的深度內容，建立國際視野的基礎認知。</p>
       </div>
-      <div class="v10-trust-card">
-        <span class="v10-trust-num">4 種</span>
-        <span class="v10-trust-label">主流人才計劃<small>VISA SCHEMES</small></span>
+      <div class="v10-track">
+        <span class="v10-track-icon">02</span>
+        <span class="v10-track-tag">專業啟蒙</span>
+        <h3>專業啟蒙</h3>
+        <p>走進真實企業環境：500 強金融公司、科技獨角獸、創業空間 — 看見香港產業的真實運作。</p>
       </div>
-      <div class="v10-trust-card">
-        <span class="v10-trust-num">8 大</span>
-        <span class="v10-trust-label">行業覆蓋<small>INDUSTRIES</small></span>
+      <div class="v10-track">
+        <span class="v10-track-icon">03</span>
+        <span class="v10-track-tag">個人成長</span>
+        <h3>個人成長</h3>
+        <p>性格分析 + 團隊協作 + 商務演講 — 導師帶領的結構化工作坊，全面提升綜合素質。</p>
       </div>
-      <div class="v10-trust-card">
-        <span class="v10-trust-num">7 年</span>
-        <span class="v10-trust-label">續簽到永居陪跑<small>FULL-CYCLE</small></span>
+      <div class="v10-track">
+        <span class="v10-track-icon">04</span>
+        <span class="v10-track-tag">升學規劃</span>
+        <h3>升學規劃</h3>
+        <p>港八大名校申請攻略 + IANG 留港 7 年永居路徑全方位解讀 — 從遊學看見留學的可能。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ DISCLAIMER (LEGAL COMPLIANCE) ============ -->
+<!-- ============ MENTOR HIGHLIGHT (WHITE BG, gold border-left) ============ -->
+<section class="v10-section white">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">OUR COMMITMENT</span>
+      <h2>分組 Mentor 全程跟進</h2>
+      <p class="lede">不只是行程 — 是 5 天 4 夜的結構化指導</p>
+    </div>
+    <div class="v10-tour-mentor">
+      <div class="v10-tour-mentor-icon">👥</div>
+      <div class="v10-tour-mentor-body">
+        <p>我們為每組學生配備專屬 Mentor，全程跟進學習進度、批改商業策劃書、提供升學與職涯諮詢。讓每位學生在體驗中得到真實可帶走的結構化指導。</p>
+        <span class="v10-tour-mentor-detail">10–15 人一組 · 1 位 Mentor 帶領 · 7×24 WhatsApp 支援</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8 OUTCOMES ============ -->
+<section class="v10-section canvas" id="outcomes">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">WHAT YOU TAKE AWAY</span>
+      <h2>8 大收穫</h2>
+      <p class="lede">完成 5 天 4 夜後,每位學生都會帶走真實可驗證的成果。</p>
+    </div>
+    <div class="v10-tracks">
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">500 強金融企業簽發項目證書</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">500 強企業高層推薦信</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">商業策劃書撰寫能力（團隊作品）</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">商務演講與團隊協作經驗</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">留港 7 年永居路徑全景</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">港八大名校申請攻略</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">未來專業職業初步規劃</h3></div>
+      <div class="v10-track"><span class="v10-track-icon">✓</span><span class="v10-track-tag">OUTCOME</span><h3 style="font-size:1.05rem">國際金融視野與商業素養</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INCLUDED (簡單 bullet, no cards, 餐飲 deleted) ============ -->
+<section class="v10-section white" id="included">
+  <div class="v10-container">
+    <div class="v10-head">
+      <span class="eyebrow">INCLUDED</span>
+      <h2>配套</h2>
+      <p class="lede">核心配套簡明清晰 — 細節將在報名確認後提供完整清單。</p>
+    </div>
+    <ul class="v10-included-list">
+        <li class="v10-included-item">
+          <span class="v10-included-emoji">🏨</span>
+          <div class="v10-included-body">
+            <strong>住宿</strong>
+            <span>灣仔 / 銅鑼灣 / 旺角三星酒店 4 晚</span>
+          </div>
+        </li>
+        <li class="v10-included-item">
+          <span class="v10-included-emoji">🚐</span>
+          <div class="v10-included-body">
+            <strong>接送</strong>
+            <span>深圳寶安機場 ↔ 香港酒店</span>
+          </div>
+        </li>
+        <li class="v10-included-item">
+          <span class="v10-included-emoji">🛡️</span>
+          <div class="v10-included-body">
+            <strong>安全</strong>
+            <span>1:6 師生比全程陪同 + 短期意外保險</span>
+          </div>
+        </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ DISCLAIMER ============ -->
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <blockquote class="v10-disclaimer">
-      <p class="v10-disclaimer-text">★ CareerForge 堅持合法合規、實事求是的諮詢原則，所有升學及身份申請均建立於專業評估與真實能力之上。</p>
+      <p class="v10-disclaimer-text">★ CareerForge 堅持合法合規、實事求是的諮詢原則，所有行程及升學申請均建立於專業評估與真實能力之上。</p>
     </blockquote>
   </div>
 </section>
 
-<!-- ============ CTA (NAVY) ============ -->
+<!-- ============ CTA (WHITE BG) ============ -->
 <section class="v10-section white tight" id="contact">
   <div class="v10-container">
     <div class="v10-cta">
-      <div class="decor decor-cta"></div>
       <div class="v10-cta-inner">
         <span class="v10-cta-eyebrow">START YOUR JOURNEY</span>
-        <h2>第一步：30&nbsp;分鐘免費資格評估</h2>
-        <p>提交基本资料后 24 小时内收到顾问回复 — 包含 4 大業務板塊匹配度评分 + 预计所需时间 + 后续路径建议。</p>
+        <h2>第一步：30 分鐘免費行程諮詢</h2>
+        <p>提交基本資料後 24 小時內收到顧問回覆 — 包含 5 天 4 夜行程完整建議、預算評估、報名時間表。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85296966867" class="v10-cta-btn v10-cta-primary">WhatsApp 立即預約</a>
-          <a href="tour.html" class="v10-cta-btn v10-cta-secondary">了解 5 天 4 夜遊學團</a>
+          <a href="index.html" class="v10-cta-btn v10-cta-secondary">或瀏覽其他業務板塊</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CONTACT (WHITE CARDS) ============ -->
+<!-- ============ CONTACT GRID ============ -->
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <div class="v10-head">
@@ -1375,7 +1383,7 @@ img, video, iframe, table { max-width: 100%; }
       <div class="v10-contact-card">
         <div class="v10-contact-icon">✉️</div>
         <h4>電郵</h4>
-        <p>careerforgehk@gmail.com<br>提供書面方案摘要</p>
+        <p>careerforgehk@gmail.com<br>提供書面行程建議</p>
       </div>
       <div class="v10-contact-card">
         <div class="v10-contact-icon">📍</div>
@@ -1398,12 +1406,11 @@ img, video, iframe, table { max-width: 100%; }
         <a href="immigration.html">身份與續簽對標</a>
         <a href="education.html">海外與香港升學</a>
         <a href="career.html">求職與身價躍遷</a>
-        <a href="tour.html">遊學團服務</a>
       </div>
       <div class="footer-col">
         <h4>资源</h4>
         <a href="cases.html">客戶案例</a>
-        <a href="tour.html">遊學團</a>
+        <a href="tour.html" class="active">遊學團</a>
         <a href="#contact">聯絡我們</a>
       </div>
       <div class="footer-col">
