@@ -31,7 +31,7 @@
 <meta name="description" content="CareerForge 铸途 — 香港升学完整对标。从幼稚园、小学、中学到 DSE / IB / A-Level、大学申请，配合家长签证落地节奏同步推进子女教育路径。">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20260904">
 </head>
 <body>
 
@@ -49,7 +49,7 @@
   --canvas:      #F7F8FA;
   --ink-900:     #0B192C;
   --ink-700:     #3A4A5C;
-  --ink-500:     #6B7A8A;
+  --ink-500:     #5B6A7A;
   --ink-100:     #E5E9EE;
   --shadow-card: 0 4px 20px rgba(0,0,0,0.06);
   --shadow-deep: 0 16px 48px -12px rgba(11,25,44,0.28);
@@ -58,12 +58,29 @@
 
 /* ============ HERO ============ */
 .v10-hero {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  background: transparent;
   padding: 120px 0 100px;
   position: relative;
   overflow: hidden;
   color: var(--white);
 }
+.v10-hero { isolation: isolate; }
+.v10-hero-bg-education {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/pillars/web/02-education.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  z-index: -2;
+}
+.v10-hero-overlay-education {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(20,20,25,0.80) 0%, rgba(30,25,20,0.30) 50%, rgba(20,20,25,0.85) 100%);
+  z-index: -1;
+}
+
 .v10-hero::before {
   content: "";
   position: absolute; top: -200px; right: -200px;
@@ -168,13 +185,13 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #7A5E12;
   margin-bottom: 20px;
   padding: 6px 0;
   border-top: 1px solid var(--gold);
   border-bottom: 1px solid var(--gold);
 }
-.v10-head.dark .eyebrow { color: var(--gold); }
+.v10-head.dark .eyebrow { color: #7A5E12; }
 .v10-head h2 {
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: clamp(2rem, 3.5vw, 2.8rem);
@@ -227,7 +244,7 @@
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 3.5vw, 2.6rem);
   font-weight: 700;
-  color: var(--gold);
+  color: #7A5E12;
   line-height: 1;
   margin-bottom: 8px;
   letter-spacing: 0.5px;
@@ -285,7 +302,7 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold-600);
+  color: #7A5E12;
   margin-bottom: 12px;
 }
 .v10-track h3 {
@@ -350,7 +367,7 @@
   font-family: 'Playfair Display', serif;
   font-size: 2.4rem;
   font-weight: 700;
-  color: var(--gold);
+  color: #7A5E12;
   letter-spacing: 0.5px;
   line-height: 1;
   margin-bottom: 16px;
@@ -767,7 +784,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #7A5E12;
   margin-bottom: 18px;
 }
 .v10-cta h2 {
@@ -869,7 +886,7 @@
 }
 .v10-tutor-summary-eyebrow {
   display: inline-block;
-  color: var(--gold);
+  color: #7A5E12;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 1.5px;
@@ -877,12 +894,13 @@
   margin-bottom: 12px;
 }
 .v10-tutor-summary-card h3 {
-  font-size: 22px;
+  font-family: 'Playfair Display', 'Noto Serif TC', 'Noto Serif SC', serif;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--navy);
   margin: 0 0 14px;
   letter-spacing: 0.5px;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 .v10-tutor-summary-card p {
   font-size: 15px;
@@ -924,6 +942,7 @@
   padding: 32px 28px;
   position: relative;
   transition: all 0.3s ease;
+  box-shadow: var(--shadow-card);
 }
 .v10-package:hover {
   transform: translateY(-4px);
@@ -934,6 +953,7 @@
   background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
   color: #fff;
   border: none;
+  box-shadow: 0 24px 48px rgba(15, 42, 78, 0.20);
 }
 .v10-package.featured h4,
 .v10-package.featured .v10-package-points li {
@@ -947,7 +967,7 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.5px;
-  color: var(--gold);
+  color: #7A5E12;
   text-transform: uppercase;
   margin-bottom: 12px;
   padding: 4px 12px;
@@ -956,7 +976,7 @@
 }
 .v10-package.featured .v10-package-tag {
   background: rgba(212,175,55,0.25);
-  color: var(--gold-100);
+  color: #7A5E12;
 }
 .v10-package h4 {
   font-size: 22px;
@@ -1118,10 +1138,7 @@
   background: var(--gold-100);
   color: var(--navy);
 }
-.site-header .nav-menu a.active {
-  background: var(--navy);
-  color: #FFFFFF;
-}
+
 .site-header .nav-actions {
   display: flex;
   align-items: center;
@@ -1153,6 +1170,8 @@
   color: var(--navy);
 }
 .site-header .hamburger {
+  min-width: 44px;
+  min-height: 44px;
   display: none;
   flex-direction: column;
   justify-content: space-around;
@@ -1307,14 +1326,13 @@ img, video, iframe, table { max-width: 100%; }
         <span class="logo-cn">鑄途</span>
       </a>
       <div class="nav-menu" id="navMenu">
-        <a href="index-cn.html">首页</a>
-        <a href="immigration-cn-v17.html">身份规划</a>
-        <a href="education-cn.html" class="active">升学规划</a>
-        <a href="career-cn.html">求职身价</a>
-        <a href="quiz-cn.html">牛马测验</a>
-        <a href="cases-cn.html">客户故事</a>
-        <a href="#contact">联系我们</a>
-      </div>
+        <a href="index-cn.html" class="nav-link">首页</a>
+        <a href="immigration-cn.html" class="nav-link">身份规划</a>
+        <a href="education-cn.html" class="nav-link active">升学规划</a>
+        <a href="career-cn.html" class="nav-link">求职身价</a>
+        <a href="tour-cn.html" class="nav-link">游学团</a>
+        <a href="#contact" class="nav-link">联系我们</a>
+            </div>
       <div class="nav-actions">
         <div class="lang-switcher">
           <a href="index.html">繁</a>
@@ -1331,6 +1349,8 @@ img, video, iframe, table { max-width: 100%; }
 
 <!-- ============ HERO ============ -->
 <section class="v10-hero">
+  <div class="v10-hero-bg-education"></div>
+  <div class="v10-hero-overlay-education"></div>
   <div class="v10-container">
     <span class="v10-hero-eyebrow">
       <span class="v10-hero-eyebrow-dot"></span>
@@ -1714,7 +1734,7 @@ img, video, iframe, table { max-width: 100%; }
         <p>提交基本资料後 24 小时內收到顧問回覆 — 包含子女学业初步評估 + 3 条升学路径建議（DSE / IB / A-Level）+ 预計所需时间 + 後續路徑規劃。</p>
         <div class="v10-cta-actions">
           <a href="https://wa.me/85296966867" class="v10-cta-btn v10-cta-primary">WhatsApp 立即预約</a>
-          <a href="quiz-cn.html" class="v10-cta-btn v10-cta-secondary">先做 <span class="num-unit">3 分鐘</span>牛馬測驗</a>
+          <a href="consult-cn.html" class="v10-cta-btn v10-cta-secondary">先做 <span class="num-unit">3 分鐘</span>5 分鐘免費初評</a>
         </div>
       </div>
     </div>
@@ -1757,15 +1777,17 @@ img, video, iframe, table { max-width: 100%; }
       </div>
       <div class="footer-col">
         <h4>业务板塊</h4>
-        <a href="immigration-cn-v17.html">身份與續簽对標</a>
+        <a href="immigration-cn.html">身份與續簽对標</a>
         <a href="education-cn.html">海外與香港升学</a>
-        <a href="career-cn.html">求職與身價躍遷</a>
+        <a href="career-cn.html">求职与身价跃迁</a>
+        <a href="tour-cn.html">海外游学团 5天4夜 / 7天6夜</a>
       </div>
       <div class="footer-col">
         <h4>资源</h4>
-        <a href="cases-cn.html">客戶案例</a>
-        <a href="quiz-cn.html">牛馬身價測驗</a>
+        <a href="cases-cn.html">客户案例</a>
+        <a href="consult-cn.html">免费身价咨询</a>
         <a href="#contact">聯络我們</a>
+        <a href="#">隐私政策</a>
       </div>
       <div class="footer-col">
         <h4>聯络</h4>

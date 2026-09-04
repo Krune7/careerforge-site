@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-version="v20.0.0">
+<html lang="en" data-version="v21.0.0">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v20.0.0';
+      var EXPECTED_VER = 'v21.0.0';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -54,7 +54,7 @@
 <meta name="twitter:image" content="https://careerforgehk.com/og-image.jpg">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20260904">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,7 +95,7 @@
   --canvas:      #F7F8FA;
   --ink-900:     #0B192C;
   --ink-700:     #3A4A5C;
-  --ink-500:     #6B7A8A;
+  --ink-500:     #5B6A7A;
   --ink-100:     #E5E9EE;
   --shadow-card: 0 4px 20px rgba(0,0,0,0.06);
   --shadow-deep: 0 16px 48px -12px rgba(11,25,44,0.28);
@@ -104,11 +104,31 @@
 
 /* ============ HERO ============ */
 .v10-hero {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  background: var(--navy);
   padding: 120px 0 100px;
   position: relative;
   overflow: hidden;
   color: var(--white);
+  isolation: isolate;
+}
+/* Hero photo bg — Victoria Harbour night panorama (mirrors v10-pillar pattern) */
+.v10-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/pillars/web/00-hero-kowloon-day.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  z-index: 0;
+}
+.v10-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(11, 25, 44, 0.78) 0%,
+    rgba(11, 25, 44, 0.58) 50%,
+    rgba(11, 25, 44, 0.78) 100%
+  );
+  z-index: 1;
 }
 .v10-hero::before {
   content: "";
@@ -124,7 +144,7 @@
   background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 60%);
   border-radius: 50%;
 }
-.v10-hero .container { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+.v10-hero > .v10-container { position: relative; z-index: 2; }
 
 .v10-hero-eyebrow {
   display: inline-flex; align-items: center; gap: 12px;
@@ -213,13 +233,13 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #7A5E12;
   margin-bottom: 20px;
   padding: 6px 0;
   border-top: 1px solid var(--gold);
   border-bottom: 1px solid var(--gold);
 }
-.v10-head.dark .eyebrow { color: var(--gold); }
+.v10-head.dark .eyebrow { color: #7A5E12; }
 .v10-head h2 {
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: clamp(2rem, 3.5vw, 2.8rem);
@@ -254,6 +274,10 @@
   position: relative;
   overflow: hidden;
   transition: all .3s ease;
+  min-height: 44px;
+  min-height: 44px;
+  min-height: 44px;
+  min-height: 44px;
 }
 .v10-pillar:hover {
   transform: translateY(-4px);
@@ -446,7 +470,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #7A5E12;
   margin-bottom: 18px;
 }
 .v10-cta h2 {
@@ -675,7 +699,9 @@
     border-bottom: 1px solid #f5f5f5;
   }
   .nav-menu a:last-child { border-bottom: none; }
-  .hamburger { display: flex !important; }
+  .hamburger {
+  min-width: 44px;
+  min-height: 44px; display: flex !important; }
   .nav-actions { gap: 12px; }
   .nav {
     position: relative;
@@ -690,7 +716,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 12px;
   width: 36px;
   height: 36px;
 }
@@ -1129,14 +1155,13 @@ img, video, iframe, table { max-width: 100%; }
         <span class="logo-cn">鑄途</span>
       </a>
       <div class="nav-menu" id="navMenu">
-        <a href="index-en.html" class="active">Home</a>
-        <a href="immigration-en.html">Visa Status</a>
-        <a href="education-en.html">EducationPlanning</a>
-        <a href="career-en.html">requestcareer value</a>
-        <a href="tour-en.html">Study Tour</a>
-        <a href="cases-en.html">Client stories</a>
-        <a href="#contact">Contact</a>
-      </div>
+        <a href="index-en.html" class="nav-link">Home</a>
+        <a href="immigration-en.html" class="nav-link">Visa Status</a>
+        <a href="education-en.html" class="nav-link">Education</a>
+        <a href="career-en.html" class="nav-link">Career</a>
+        <a href="tour-en.html" class="nav-link">Study Tour</a>
+        <a href="#contact" class="nav-link">Contact</a>
+            </div>
       <div class="nav-actions">
         <div class="lang-switcher">
           <a href="index-en.html" class="active">繁</a>
@@ -1153,6 +1178,8 @@ img, video, iframe, table { max-width: 100%; }
 
 <!-- ============ HERO (NAVY) ============ -->
 <section class="v10-hero">
+  <div class="v10-hero-bg"></div>
+  <div class="v10-hero-overlay"></div>
   <div class="v10-container">
     <span class="v10-hero-eyebrow">
       <span class="v10-hero-eyebrow-dot"></span>
@@ -1394,9 +1421,10 @@ img, video, iframe, table { max-width: 100%; }
         <a href="cases-en.html">Client cases</a>
         <a href="tour-en.html">Study Tour</a>
         <a href="#contact">Contact</a>
+        <a href="#">Privacy policy</a>
       </div>
       <div class="footer-col">
-        <h4>contact</h4>
+        <h4>Contact</h4>
         <a href="https://wa.me/85296966867">WhatsApp</a>
         <a href="mailto:careerforgehk@gmail.com">careerforgehk@gmail.com</a>
       </div>

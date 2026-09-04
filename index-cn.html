@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans" data-version="v20.0.0">
+<html lang="zh-Hans" data-version="v21.0.0">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v20.0.0';
+      var EXPECTED_VER = 'v21.0.0';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -54,7 +54,7 @@
 <meta name="twitter:image" content="https://careerforgehk.com/og-image.jpg">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20260904">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,7 +95,7 @@
   --canvas:      #F7F8FA;
   --ink-900:     #0B192C;
   --ink-700:     #3A4A5C;
-  --ink-500:     #6B7A8A;
+  --ink-500:     #5B6A7A;
   --ink-100:     #E5E9EE;
   --shadow-card: 0 4px 20px rgba(0,0,0,0.06);
   --shadow-deep: 0 16px 48px -12px rgba(11,25,44,0.28);
@@ -104,11 +104,31 @@
 
 /* ============ HERO ============ */
 .v10-hero {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  background: var(--navy);
   padding: 120px 0 100px;
   position: relative;
   overflow: hidden;
   color: var(--white);
+  isolation: isolate;
+}
+/* Hero photo bg — Victoria Harbour night panorama (mirrors v10-pillar pattern) */
+.v10-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/pillars/web/00-hero-kowloon-day.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  z-index: 0;
+}
+.v10-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(11, 25, 44, 0.78) 0%,
+    rgba(11, 25, 44, 0.58) 50%,
+    rgba(11, 25, 44, 0.78) 100%
+  );
+  z-index: 1;
 }
 .v10-hero::before {
   content: "";
@@ -124,7 +144,7 @@
   background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 60%);
   border-radius: 50%;
 }
-.v10-hero .container { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+.v10-hero > .v10-container { position: relative; z-index: 2; }
 
 .v10-hero-eyebrow {
   display: inline-flex; align-items: center; gap: 12px;
@@ -213,13 +233,13 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #7A5E12;
   margin-bottom: 20px;
   padding: 6px 0;
   border-top: 1px solid var(--gold);
   border-bottom: 1px solid var(--gold);
 }
-.v10-head.dark .eyebrow { color: var(--gold); }
+.v10-head.dark .eyebrow { color: #7A5E12; }
 .v10-head h2 {
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: clamp(2rem, 3.5vw, 2.8rem);
@@ -254,6 +274,10 @@
   position: relative;
   overflow: hidden;
   transition: all .3s ease;
+  min-height: 44px;
+  min-height: 44px;
+  min-height: 44px;
+  min-height: 44px;
 }
 .v10-pillar:hover {
   transform: translateY(-4px);
@@ -446,7 +470,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #7A5E12;
   margin-bottom: 18px;
 }
 .v10-cta h2 {
@@ -675,7 +699,9 @@
     border-bottom: 1px solid #f5f5f5;
   }
   .nav-menu a:last-child { border-bottom: none; }
-  .hamburger { display: flex !important; }
+  .hamburger {
+  min-width: 44px;
+  min-height: 44px; display: flex !important; }
   .nav-actions { gap: 12px; }
   .nav {
     position: relative;
@@ -690,7 +716,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 12px;
   width: 36px;
   height: 36px;
 }
@@ -1129,14 +1155,13 @@ img, video, iframe, table { max-width: 100%; }
         <span class="logo-cn">鑄途</span>
       </a>
       <div class="nav-menu" id="navMenu">
-        <a href="index-cn.html" class="active">首页</a>
-        <a href="immigration-cn-v17.html">身份规划</a>
-        <a href="education-cn.html">升学规划</a>
-        <a href="career-cn.html">求职身价</a>
-        <a href="tour-cn.html">游学团</a>
-        <a href="cases-cn.html">客户故事</a>
-        <a href="#contact">联系我们</a>
-      </div>
+        <a href="index-cn.html" class="nav-link">首页</a>
+        <a href="immigration-cn.html" class="nav-link">身份规划</a>
+        <a href="education-cn.html" class="nav-link">升学规划</a>
+        <a href="career-cn.html" class="nav-link">求职身价</a>
+        <a href="tour-cn.html" class="nav-link">游学团</a>
+        <a href="#contact" class="nav-link">联系我们</a>
+            </div>
       <div class="nav-actions">
         <div class="lang-switcher">
           <a href="index.html">繁</a>
@@ -1153,6 +1178,8 @@ img, video, iframe, table { max-width: 100%; }
 
 <!-- ============ HERO (NAVY) ============ -->
 <section class="v10-hero">
+  <div class="v10-hero-bg"></div>
+  <div class="v10-hero-overlay"></div>
   <div class="v10-container">
     <span class="v10-hero-eyebrow">
       <span class="v10-hero-eyebrow-dot"></span>
@@ -1270,7 +1297,7 @@ CareerForge 鑄途 — 专注香港高才通、优才、专才、留学升港全
     <div class="v10-head dark">
       <span class="eyebrow">5 天 4 夜 · 香港游学团</span>
       <h2>暑假来香港，<br>亲身体验国际大都会。</h2>
-      <p class="lede">为内地高中及大学生打造的深度游学 — 多元主题 × 4 大核心模块 × 500 强企业证书。</p>
+      <p class="lede">为海内外高中及大学生打造的深度游学 — 多元主题 × 4 大核心模块 × 500 强企业证书。</p>
     </div>
 
     <!-- 國慶限定 BANNER -->
@@ -1279,7 +1306,7 @@ CareerForge 鑄途 — 专注香港高才通、优才、专才、留学升港全
       <div class="v10-tour-banner-body">
         <span class="v10-tour-banner-eyebrow">国庆限定 · 限量招募</span>
         <h3>国庆黄金周限定 · 香港游学团</h3>
-        <p>内地高中及大学生专属 — 与祖国同庆 + 亲历国际大都会</p>
+        <p>海内外高中及大学生专属 — 亲历国际大都会</p>
         <span class="v10-tour-banner-meta">⏰ 9 月 20 日截止报名</span>
       </div>
       <a href="#contact" class="v10-cta-btn v10-tour-banner-btn">立即查询国庆团</a>
@@ -1359,7 +1386,7 @@ CareerForge 鑄途 — 专注香港高才通、优才、专才、留学升港全
     <div class="v10-contact-grid">
       <div class="v10-contact-card" id="wechat-contact">
         <div class="v10-contact-icon">💬</div>
-        <h4>微信咨询（内地客户首选）</h4>
+        <h4>微信咨询</h4>
         <p>扫码加顾问为好友 — 国家人脉群 + 1 对 1 咨询<br><span style="color: var(--gold-600); font-size: 0.92rem;">微信 ID: careerforge-cn</span></p>
         <div style="margin-top: 14px; width: 110px; height: 110px; border: 1px dashed var(--ink-200); border-radius: 8px; background: #f8f6f0; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 0.78rem; color: var(--ink-300); line-height: 1.4;">
           微信二维码<br>[Peggy 補上]
@@ -1392,8 +1419,8 @@ CareerForge 鑄途 — 专注香港高才通、优才、专才、留学升港全
         <p>香港高端个人成长顾问。身份 · 升学 · 职涯身价 一站式陪跑。</p>
       </div>
       <div class="footer-col">
-        <h4>业务板块</h4>
-        <a href="immigration-cn-v17.html">身份与续签对标</a>
+        <h4>服务</h4>
+        <a href="immigration-cn.html">身份与续签对标</a>
         <a href="education-cn.html">海外与香港升学</a>
         <a href="career-cn.html">求职与身价跃迁</a>
         <a href="tour-cn.html">游学团</a>
@@ -1403,6 +1430,7 @@ CareerForge 鑄途 — 专注香港高才通、优才、专才、留学升港全
         <a href="cases-cn.html">客户案例</a>
         <a href="tour-cn.html">游学团</a>
         <a href="#contact">联络我们</a>
+        <a href="#">隐私政策</a>
       </div>
       <div class="footer-col">
         <h4>联络</h4>
