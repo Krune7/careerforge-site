@@ -1047,10 +1047,9 @@
       btn.addEventListener('click', () => {
         const target = btn.dataset.langTarget;
         try { localStorage.setItem('cf_lang', target); } catch(e) {}
-        // Reload with lang param
-        const url = new URL(location.href);
-        url.searchParams.set('lang', target);
-        location.href = url.toString();
+        // Navigate to corresponding lang page (consult.html / consult-cn.html / consult-en.html)
+        const langMap = { 'zh-Hant': 'consult.html', 'zh-Hans': 'consult-cn.html', 'en': 'consult-en.html' };
+        location.href = langMap[target] || 'consult.html';
       });
     });
     // Highlight current lang
