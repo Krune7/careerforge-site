@@ -256,9 +256,9 @@
             </div>
       <div class="nav-actions">
         <div class="lang-switcher">
-          <a href="audit.html" class="active" data-lang-target="zh-Hant">繁</a>
-          <a href="audit-cn.html" data-lang-target="zh-Hans">簡</a>
-          <a href="audit-en.html" data-lang-target="en">EN</a>
+          <a href="audit.html" class="active">繁</a>
+          <a href="audit-cn.html">簡</a>
+          <a href="audit-en.html">EN</a>
         </div>
         <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
           <span></span><span></span><span></span>
@@ -454,7 +454,7 @@
     <ol>
       <li>用 Playwright (Chromium headless) 開每個頁面</li>
         <li>viewport 設定 390 × 844（iPhone 14 標準）</li>
-        <li>掃描所有 DOM element 嘅 bounding rect</li>
+        <li>掃描所有 DOM element 的 bounding rect</li>
         <li>確認 0 個 element.right > viewport 寬度</li>
         <li>確認 body.scrollWidth ≤ 391px</li>
     </ol>
