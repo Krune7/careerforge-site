@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" data-version="v18.14.2">
+<html lang="zh-Hant" data-version="v23.0.12a">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v18.14.2';
+      var EXPECTED_VER = 'v23.0.12a';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -835,7 +835,7 @@
   .site-header .nav-logo .logo-en { font-size: 1.05rem !important; }
   .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; }
   .site-header .container { padding: 0 16px; }
-  .v10-hero-title { font-size: clamp(1.75rem, 7vw, 4.8rem) !important; }
+  .v10-hero-title { font-size: clamp(1.75rem, 7vw, 4.8rem) !important; line-height: 1.18 !important; max-width: 100% !important; }
   .v10-hero-sub { font-size: 0.95rem !important; }
   .v10-head h2 { font-size: 1.6rem !important; line-height: 1.25 !important; }
   .v10-section { padding: 56px 0 !important; }
@@ -1431,7 +1431,7 @@ img, video, iframe, table { max-width: 100%; }
         <h2>第一步：30 分鐘免費行程諮詢</h2>
         <p>提交基本資料後 24 小時內收到顧問回覆 — 包含 5 天 4 夜行程完整建議、預算評估、報名時間表。</p>
         <div class="v10-cta-actions">
-          <a href="https://wa.me/85296966867" class="v10-cta-btn v10-cta-primary">WhatsApp 立即預約</a>
+          <a href="https://wa.me/85296923498" class="v10-cta-btn v10-cta-primary">WhatsApp 立即預約</a>
           <a href="index.html" class="v10-cta-btn v10-cta-secondary">或瀏覽其他業務板塊</a>
         </div>
       </div>
@@ -1439,7 +1439,7 @@ img, video, iframe, table { max-width: 100%; }
   </div>
 </section>
 
-<!-- ============ CONTACT GRID ============ -->
+<!-- ============ CONTACT (WHITE CARDS) ============ -->
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <div class="v10-head">
@@ -1450,17 +1450,17 @@ img, video, iframe, table { max-width: 100%; }
       <div class="v10-contact-card">
         <div class="v10-contact-icon">📱</div>
         <h4>WhatsApp / 微信</h4>
-        <p>852-9696-6867<br>顧問 24 小時內回覆</p>
+        <p>852-9692-3498<br>顧問 24 小時內回覆</p>
       </div>
       <div class="v10-contact-card">
         <div class="v10-contact-icon">✉️</div>
         <h4>電郵</h4>
-        <p>careerforgehk@gmail.com<br>提供書面行程建議</p>
+        <p>info@careerforge-hk.com<br>提供書面方案摘要</p>
       </div>
       <div class="v10-contact-card">
         <div class="v10-contact-icon">📍</div>
-        <h4>香港辦公室</h4>
-        <p>啟德 · 尖沙咀<br>預約製 1 對 1 諮詢</p>
+        <h4>辦公室地點</h4>
+        <p>香港：啟德 · 尖沙咀<br>佛山：世貿廣場<br>預約製 1 對 1 諮詢</p>
       </div>
     </div>
   </div>
@@ -1475,27 +1475,32 @@ img, video, iframe, table { max-width: 100%; }
       </div>
       <div class="footer-col">
         <h4>服務</h4>
-        <a href="immigration.html">身份與續簽對標</a>
-        <a href="education.html">海外與香港升學</a>
-        <a href="career.html">求職與身價躍遷</a>
-        <a href="tour.html">海外遊學團 5天4夜 / 7天6夜</a>
+        <ul>
+          <li><a href="tour.html">身份與續簽對標</a></li>
+          <li><a href="tour.html">海外與香港升學</a></li>
+          <li><a href="tour.html">求職與身價躍遷</a></li>
+          <li><a href="tour.html">海外遊學團 5天4夜 / 7天6夜</a></li>
+        </ul>
       </div>
       <div class="footer-col">
         <h4>資源</h4>
-        <a href="cases.html">客戶案例</a>
-        <a href="tour.html" class="active">遊學團</a>
-        <a href="#contact">聯絡我們</a>
-        <a href="#">私隱政策</a>
+        <ul>
+          <li><a href="cases.html">客戶案例</a></li>
+          <li><a href="#contact">聯絡我們</a></li>
+          <li><a href="#">私隱政策</a></li>
+        </ul>
       </div>
       <div class="footer-col">
         <h4>聯絡</h4>
-        <a href="https://wa.me/85296966867">WhatsApp</a>
-        <a href="mailto:careerforgehk@gmail.com">careerforgehk@gmail.com</a>
+        <ul>
+          <li><a href="https://wa.me/85296923498">WhatsApp</a></li>
+          <li><a href="mailto:info@careerforge-hk.com">info@careerforge-hk.com</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
-<span class="footer-audit"><a href="audit.html">Mobile Audit</a></span>    <span class="footer-lang">
+      <span class="footer-audit"><a href="audit.html">Mobile Audit</a></span>    <span class="footer-lang">
         <a href="index.html" class="active">繁體</a> · <a href="index-cn.html">簡體</a> · <a href="index-en.html">EN</a>
       </span>
     </div>
@@ -1514,5 +1519,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
+<a href="#contact" class="sticky-cta">💬 立即諮詢</a>
+
 </body>
 </html>

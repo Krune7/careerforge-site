@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans" data-version="v18.11">
+<html lang="zh-Hans" data-version="v23.0.12a">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v18.11';
+      var EXPECTED_VER = 'v23.0.12a';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -114,8 +114,8 @@
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: clamp(2.6rem, 5.8vw, 4.8rem);
   font-weight: 700;
-  letter-spacing: 0.5px;
-  line-height: 1.15;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
   color: var(--white);
   margin: 0 0 32px;
   max-width: 980px;
@@ -154,7 +154,7 @@
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 700;
   color: var(--gold);
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   line-height: 1;
   margin-bottom: 8px;
 }
@@ -196,7 +196,7 @@
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: clamp(2rem, 3.5vw, 2.8rem);
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   line-height: 1.25;
   color: var(--ink-900);
   margin: 0 0 22px;
@@ -217,6 +217,45 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
   margin-top: 56px;
+}
+
+.v10-contact-card {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: all .25s ease;
+}
+.v10-contact-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 32px -8px rgba(11,25,44,0.18);
+}
+.v10-contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%);
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.v10-contact-card h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink-900);
+  margin: 0 0 10px;
+}
+.v10-contact-card p {
+  font-size: 0.95rem;
+  color: var(--ink-700);
+  margin: 0;
+  line-height: 1.6;
 }
 
 /* ============ WHY-HK STAT CARDS ============ */
@@ -247,7 +286,7 @@
   color: #7A5E12;
   line-height: 1;
   margin-bottom: 8px;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
 }
 .v10-why-label {
   display: block;
@@ -309,7 +348,7 @@
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   line-height: 1.3;
   color: var(--ink-900);
   margin: 0 0 14px;
@@ -368,7 +407,7 @@
   font-size: 2.4rem;
   font-weight: 700;
   color: #7A5E12;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   line-height: 1;
   margin-bottom: 16px;
 }
@@ -385,7 +424,7 @@
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   color: var(--ink-900);
   margin: 0 0 12px;
 }
@@ -436,13 +475,13 @@
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 18px;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
 }
 .v10-tutor-name {
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: 1.35rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   color: var(--ink-900);
   margin: 0 0 6px;
 }
@@ -506,7 +545,7 @@
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   color: var(--white);
   margin: 0 0 8px;
 }
@@ -538,7 +577,7 @@
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--gold);
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   line-height: 1;
   margin-bottom: 6px;
 }
@@ -635,7 +674,7 @@
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: 1.4rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   color: var(--ink-900);
   margin: 0 0 8px;
 }
@@ -690,7 +729,7 @@
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: 1.6rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   color: var(--white);
   margin: 0 0 12px;
 }
@@ -718,7 +757,7 @@
   font-size: 2.4rem;
   font-weight: 700;
   color: var(--gold);
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   line-height: 1;
   margin-bottom: 12px;
 }
@@ -791,7 +830,7 @@
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: clamp(1.9rem, 3.2vw, 2.6rem);
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   line-height: 1.3;
   margin: 0 0 22px;
   color: var(--white);
@@ -900,7 +939,7 @@
   font-weight: 700;
   color: var(--navy);
   margin: 0 0 14px;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   line-height: 1.3;
 }
 .v10-tutor-summary-card p {
@@ -984,7 +1023,7 @@
   font-weight: 700;
   color: var(--navy);
   margin: 0 0 14px;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
 }
 .v10-package-desc {
   font-size: 14px;
@@ -1043,7 +1082,7 @@
   color: #fff;
   font-weight: 700;
   font-size: 14px;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
 }
 .v10-diff-row.v10-diff-header .v10-diff-cell {
   padding: 16px 20px;
@@ -1112,7 +1151,7 @@
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--navy);
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
 }
 .site-header .nav-logo .logo-cn {
   font-family: 'Noto Serif TC', serif;
@@ -1290,7 +1329,7 @@
   .site-header .nav-logo .logo-en { font-size: 1.05rem !important; }
   .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; }
   .site-header .container { padding: 0 16px; }
-  .v10-hero-title { font-size: clamp(1.75rem, 7vw, 4.8rem) !important; }
+  .v10-hero-title { font-size: clamp(1.75rem, 7vw, 4.8rem) !important; line-height: 1.18 !important; max-width: 100% !important; }
   .v10-hero-sub { font-size: 0.95rem !important; }
   .v10-head h2 { font-size: 1.6rem !important; line-height: 1.25 !important; }
   .v10-section { padding: 56px 0 !important; }
@@ -1475,7 +1514,7 @@ img, video, iframe, table { max-width: 100%; }
         <span class="v10-track-icon">AL</span>
         <span class="v10-track-tag">GCE A-Level · 英式预科</span>
         <h3>英国高中课程</h3>
-        <p>学生自选 3-4 科深入研读，单科深度高，英澳加新加坡顶尖大学直接认可。适合目标明确、单科特长突出的学生。</p>
+        <p>学生自选 3-4 科深入研读，单科深度高，英澳加顶尖大学直接认可。适合目标明确、单科特长突出的学生。</p>
       </div>
     </div>
   </div>
@@ -1532,7 +1571,7 @@ img, video, iframe, table { max-width: 100%; }
     <div class="v10-head">
       <span class="eyebrow">导师团队</span>
       <h2>顶尖学府导师，<br>专职团队全程跟进。</h2>
-      <p class="lede">CareerForge 教育团队由香港中文大学、香港大学、北京大学等顶尖学府导师组成 — 全部为专职导师，10+ 年教学经验。深入了解每个家庭的独特需求。</p>
+      <p class="lede">CareerForge 教育团队由香港及國際顶尖学府导师组成 — 全部为专职导师，10+ 年教学经验。深入了解每个家庭的独特需求。</p>
     </div>
 
     <!-- 師资總括 -->
@@ -1540,7 +1579,7 @@ img, video, iframe, table { max-width: 100%; }
       <div class="v10-tutor-summary-card">
         <span class="v10-tutor-summary-eyebrow">学历总览</span>
         <h3>顶尖学府 · 全港教育专家</h3>
-        <p>我們的导师团队均畢业或任教于香港中文大学、香港大学、北京大学、英屬哥倫比亞大学等頂尖学府，覆蓋商科、法律、工程、文学、教育等多個专业範疇。</p>
+        <p>我們的导师团队均畢业或任教于香港及國際頂尖学府，覆蓋商科、法律、工程、文学、教育等多個专业範疇。</p>
       </div>
 
       <div class="v10-tutor-summary-card">
@@ -1691,13 +1730,13 @@ img, video, iframe, table { max-width: 100%; }
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">「启思中学 IBMYP 学生，<span class="num-unit">9 月</span>开始补习，下学期成功考入新加坡国际学校」</p>
+        <p class="v10-case-quote">「本地国际课程学生，<span class="num-unit">9 月</span>开始补习，下学期成功考入海外顶尖国际学校」</p>
         <span class="v10-case-meta">国际学校转学 · 2025 学年</span>
       </div>
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">「新来港学生，英文科补习数月，考进 BAND 1 前列 — 何明华会督银禧中学」</p>
+        <p class="v10-case-quote">「新来港学生，英文科补习数月，考进 Band 1 前列名校」</p>
         <span class="v10-case-meta">Band 1 中学插班 · 2025 学年</span>
       </div>
 
@@ -1709,7 +1748,7 @@ img, video, iframe, table { max-width: 100%; }
 
       <div class="v10-case">
         <span class="v10-case-icon">★</span>
-        <p class="v10-case-quote">「两姊妹申请 8 间一线幼稚园，7 间取录，最终选定九龙真光中学（幼稚园部）」</p>
+        <p class="v10-case-quote">「两姊妹申请 8 间一线幼稚园，7 间取录，最终选定香港知名九龙区女子名校（幼稚园部）」</p>
         <span class="v10-case-meta">幼稚园入学 · 2024 学年</span>
       </div>
     </div>
@@ -1734,7 +1773,7 @@ img, video, iframe, table { max-width: 100%; }
         <h2>第一步：30&nbsp;分钟免费升学评估</h2>
         <p>提交基本资料後 24 小时內收到顧問回覆 — 包含子女学业初步評估 + 3 条升学路径建議（DSE / IB / A-Level）+ 预計所需时间 + 後續路徑規劃。</p>
         <div class="v10-cta-actions">
-          <a href="https://wa.me/85296966867" class="v10-cta-btn v10-cta-primary">WhatsApp 立即预約</a>
+          <a href="https://wa.me/85296923498" class="v10-cta-btn v10-cta-primary">WhatsApp 立即预約</a>
           <a href="consult-cn.html" class="v10-cta-btn v10-cta-secondary">先做 <span class="num-unit">3 分鐘</span>5 分鐘免費初評</a>
         </div>
       </div>
@@ -1742,28 +1781,28 @@ img, video, iframe, table { max-width: 100%; }
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
+<!-- ============ CONTACT (WHITE CARDS) ============ -->
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">聯络我們</span>
-      <h2>用你最方便的方式，<br>與顧問直接对话。</h2>
+      <span class="eyebrow">聯络我们</span>
+      <h2>用你最方便的方式，<br>与顾问直接对话。</h2>
     </div>
     <div class="v10-contact-grid">
-      <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
-        <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">📱</div>
-        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">WhatsApp / 微信</h4>
-        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">852-9696-6867<br>顾问 24 小时内回覆</p>
+      <div class="v10-contact-card">
+        <div class="v10-contact-icon">📱</div>
+        <h4>WhatsApp / 微信</h4>
+        <p>852-9692-3498<br>顾问 24 小时内回覆</p>
       </div>
-      <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
-        <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">✉️</div>
-        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">电郵</h4>
-        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">careerforgehk@gmail.com<br>提供書面方案摘要</p>
+      <div class="v10-contact-card">
+        <div class="v10-contact-icon">✉️</div>
+        <h4>电邮</h4>
+        <p>info@careerforge-hk.com<br>提供書面方案摘要</p>
       </div>
-      <div style="background: var(--white); border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 40px 32px; text-align: center; box-shadow: var(--shadow-card);">
-        <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--gold) 100%); color: var(--white); font-size: 1.5rem; margin-bottom: 20px;">📍</div>
-        <h4 style="font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink-900); margin: 0 0 10px;">香港办公室</h4>
-        <p style="font-size: 0.95rem; color: var(--ink-700); margin: 0; line-height: 1.6;">启德 · 尖沙咀<br>预约制 1 对 1 咨询</p>
+      <div class="v10-contact-card">
+        <div class="v10-contact-icon">📍</div>
+        <h4>香港办公室</h4>
+        <p>香港：启德 · 尖沙咀<br>佛山：世贸广场<br>预约制 1 对 1 咨询</p>
       </div>
     </div>
   </div>
@@ -1773,27 +1812,32 @@ img, video, iframe, table { max-width: 100%; }
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="footer-logo-text"><span class="fl-en">CareerForge</span><span class="fl-zh">铸途</span></a>
-        <p>香港高端個人成长顧問。身份 · 升学 · 職涯身價 一站式陪跑。</p>
+        <a href="index-cn.html" class="footer-logo-text"><span class="fl-en">CareerForge</span><span class="fl-zh">铸途</span></a>
+        <p>香港高端个人成长顾问。身份 · 升学 · 职涯身价 一站式陪跑。</p>
       </div>
       <div class="footer-col">
-        <h4>业务板塊</h4>
-        <a href="immigration-cn.html">身份與續簽对標</a>
-        <a href="education-cn.html">海外與香港升学</a>
-        <a href="career-cn.html">求职与身价跃迁</a>
-        <a href="tour-cn.html">海外游学团 5天4夜 / 7天6夜</a>
+        <h4>服务</h4>
+        <ul>
+          <li><a href="education-cn.html">身份与续签对标</a></li>
+          <li><a href="education-cn.html">海外与香港升学</a></li>
+          <li><a href="career-cn.html">求职与身价跃迁</a></li>
+          <li><a href="tour-cn.html">海外游学团 5天4夜 / 7天6夜</a></li>
+        </ul>
       </div>
       <div class="footer-col">
         <h4>资源</h4>
-        <a href="cases-cn.html">客户案例</a>
-        <a href="consult-cn.html">免费身价咨询</a>
-        <a href="#contact">聯络我們</a>
-        <a href="#">隐私政策</a>
+        <ul>
+          <li><a href="cases-cn.html">客户案例</a></li>
+          <li><a href="#contact">联络我们</a></li>
+          <li><a href="#">隐私政策</a></li>
+        </ul>
       </div>
       <div class="footer-col">
-        <h4>聯络</h4>
-        <a href="https://wa.me/85296966867">WhatsApp</a>
-        <a href="mailto:careerforgehk@gmail.com">careerforgehk@gmail.com</a>
+        <h4>联络</h4>
+        <ul>
+          <li><a href="https://wa.me/85296923498">WhatsApp</a></li>
+          <li><a href="mailto:info@careerforge-hk.com">info@careerforge-hk.com</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1818,5 +1862,8 @@ img, video, iframe, table { max-width: 100%; }
   }
 })();
 </script>
+
+<a href="#contact" class="sticky-cta">💬 立即咨询</a>
+
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" data-version="v18.9">
+<html lang="zh-Hant" data-version="v23.0.12a">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v18.9';
+      var EXPECTED_VER = 'v23.0.12a';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -35,6 +35,121 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=20260904">
 <script>(function(){function setLang(l){document.cookie='cf_lang='+l+'; path=/; max-age=31536000';try{localStorage.setItem('cf_lang',l);}catch(e){}}document.addEventListener('click',function(e){var t=e.target.closest('[data-lang-target]');if(t)setLang(t.getAttribute('data-lang-target'));});})();</script>
+
+<style>
+/* ============ v23.0.11j — unify top bar to match index canonical ============ */
+/* ============ v23.0.11k — unify top bar hamburger to match index canonical ============ */
+/* Hamburger button default (desktop: hidden) */
+.site-header .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.site-header .hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #0B192C;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.site-header .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.site-header .hamburger.active span:nth-child(2) { opacity: 0; }
+.site-header .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 880px) {
+  .site-header .lang-switcher {
+    display: inline-flex !important;
+    font-size: 0.8125rem;
+  }
+  .site-header .lang-switcher a {
+    font-size: 0.7rem !important;
+    padding: 4px 8px !important;
+    min-width: 24px !important;
+  }
+  .site-header .nav-toggle { display: none !important; }
+  .site-header .hamburger { display: flex !important; }
+}
+@media (max-width: 768px) {
+  .site-header .nav-logo { flex-shrink: 0 !important; white-space: nowrap !important; }
+  .site-header .nav-logo .logo-en { font-size: 1.05rem !important; }
+  .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; }
+}
+
+/* ============ v23.0.11n — unify hero to V10 canonical (gold italic + eyebrow pill) ============ */
+/* Override V4 .hero-v4 design to match main page V10 */
+.hero-v4 .eyebrow,
+.hero-v4 .v10-hero-eyebrow {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px !important;
+  border: 1px solid rgba(212,175,55,0.4) !important;
+  border-radius: 999px !important;
+  background: rgba(212,175,55,0.06) !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase;
+  color: var(--gold, #D4AF37) !important;
+  margin-bottom: 24px !important;
+}
+.v10-hero-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold, #D4AF37);
+  display: inline-block;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px rgba(212,175,55,0.18);
+}
+.hero-v4 h1,
+.hero-v4 .v10-hero-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif !important;
+  font-size: clamp(2.6rem, 5.8vw, 4.8rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.18 !important;
+  color: var(--ink-900) !important;
+  margin-bottom: 24px !important;
+  max-width: 100% !important;
+  text-align: left !important;
+}
+.hero-v4 h1 .accent-text,
+.hero-v4 .v10-hero-title .gold {
+  background: none !important;
+  -webkit-text-fill-color: var(--gold, #D4AF37) !important;
+  color: var(--gold, #D4AF37) !important;
+  font-style: italic !important;
+  font-weight: 600 !important;
+}
+.hero-v4 .lead {
+  font-size: 1.0625rem !important;
+  line-height: 1.7 !important;
+  color: var(--ink-700) !important;
+  text-align: left !important;
+  max-width: 720px !important;
+  margin: 0 0 32px 0 !important;
+}
+.hero-v4-inner {
+  text-align: left !important;
+  max-width: 980px !important;
+}
+@media (max-width: 540px) {
+  .hero-v4 h1,
+  .hero-v4 .v10-hero-title {
+    font-size: clamp(1.75rem, 7vw, 4.8rem) !important;
+  }
+}
+
+</style>
 </head>
 <body>
 <script>(function(){var lang=(document.cookie.match(/(?:^|; )cf_lang=([^;]+)/)||[])[1];if(!lang){try{lang=localStorage.getItem('cf_lang');}catch(e){}}if(!lang){var n=(navigator.language||'zh-Hant').toLowerCase();lang=n.startsWith('zh-cn')||n==='zh-hans'?'zh-Hans':n.startsWith('en')?'en':'zh-Hant';}var p=location.pathname,f=p.substring(p.lastIndexOf('/')+1)||'cases.html';var b=f.replace('-cn.html','').replace('-en.html','');if(f===b&&f!=='index.html'){if(lang==='zh-Hans')location.replace(b.replace('.html','-cn.html'));else if(lang==='en')location.replace(b.replace('.html','-en.html'));}})();</script>
@@ -60,6 +175,9 @@
           <a href="cases-cn.html">簡</a>
           <a href="cases-en.html">EN</a>
         </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </div>
@@ -68,8 +186,8 @@
 <!-- ===== HERO ===== -->
 <section class="hero-v4">
   <div class="hero-v4-inner">
-    <span class="eyebrow reveal">客戶故事 · 跨境青年個案</span>
-    <h1 class="reveal" data-reveal-delay="100">每一個成功個案，<br/><span class="accent-text">都是一個家庭的未來。</span></h1>
+    <span class="v10-hero-eyebrow reveal"><span class="v10-hero-eyebrow-dot"></span>客戶故事 · 跨境青年個案</span>
+    <h1 class="v10-hero-title reveal" data-reveal-delay="100">每一個成功個案，<br/><span class="gold">都是一個家庭的未來。</span></h1>
     <p class="lead reveal" data-reveal-delay="200">由北京、上海、深圳到香港 — 由副學士、高才通到投行 — 我們的客戶故事，每一個都是真實。</p>
   </div>
 </section>
@@ -122,12 +240,12 @@
         </div>
       </div>
       <div class="bento-card reveal" data-cat="education" data-reveal-delay="100">
-        <div class="quote-v4" style="font-size:1.25rem">「IB 39 分，由 HKIS 升 Oxford PPE，Howard 幫我做模擬面試整整 6 次。」</div>
+        <div class="quote-v4" style="font-size:1.25rem">「IB 39 分，由本地國際學校升海外頂尖大學社科系，Howard 幫我做模擬面試整整 6 次。」</div>
         <div class="case-meta">
           <div class="case-meta-avatar">J</div>
           <div class="case-meta-text">
             <span class="name">J 同學 · 上海</span>
-            <span class="from">IB 39 · Oxford PPE · 2023</span>
+            <span class="from">IB 39 · 海外頂尖大學社科系 · 2023</span>
           </div>
         </div>
       </div>
@@ -136,7 +254,7 @@
         <div class="case-meta">
           <div class="case-meta-avatar">L</div>
           <div class="case-meta-text">
-            <span class="name">L 同學 · 廣州</span>
+            <span class="name">L 同學 · 杭州</span>
             <span class="from">DSE 5* · 副學士 · 中大 MBA · 2020</span>
           </div>
         </div>
@@ -177,7 +295,7 @@
         <div class="case-meta">
           <div class="case-meta-avatar">C</div>
           <div class="case-meta-text">
-            <span class="name">C 先生 · 廣州</span>
+            <span class="name">C 先生 · 四川</span>
             <span class="from">DIY 被拒 → 專才成功 · 2024</span>
           </div>
         </div>
@@ -208,7 +326,7 @@
         <div class="case-meta">
           <div class="case-meta-avatar">J</div>
           <div class="case-meta-text">
-            <span class="name">J 女士 · 北京</span>
+            <span class="name">J 女士 · 四川</span>
             <span class="from">MBA → 頂尖戰略顧問 · 2023</span>
           </div>
         </div>
@@ -218,7 +336,7 @@
         <div class="case-meta">
           <div class="case-meta-avatar">Y</div>
           <div class="case-meta-text">
-            <span class="name">Y 女士 · 上海</span>
+            <span class="name">Y 女士 · 杭州</span>
             <span class="from">律師 → Magic Firm HK · 2024</span>
           </div>
         </div>
@@ -267,17 +385,41 @@
 
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-v4-grid">
-      <div class="footer-v4-brand"><a href="index.html" class="footer-logo-text"><span class="fl-en">CareerForge</span><span class="fl-zh">鑄途</span></a><p>立足香港，面向大中華區。跨境青年發展顧問。</p></div>
-      <div class="footer-v4-col"><h5>服務</h5><ul><li><a href="education.html">海外與香港升學</a></li><li><a href="immigration.html">身份與續簽對標</a></li><li><a href="career.html">求職與身價躍遷</a></li><li><a href="consult.html">免費身價諮詢</a></li>
-          <li><a href="tour.html">海外遊學團 5天4夜 / 7天6夜</a></li>
-        </ul></div>
-      <div class="footer-v4-col"><h5>關於</h5><ul><li><a href="cases.html">客戶案例</a></li><li><a href="#contact">聯絡我們</a></li><li><a href="#">私隱政策</a></li></ul></div>
-      <div class="footer-v4-col"><h5>聯絡</h5><ul><li><a href="https://wa.me/85296966867">WhatsApp</a></li><li><a href="mailto:careerforgehk@gmail.com">careerforgehk@gmail.com</a></li><li>微信: careerforgehk</li></ul></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo-text"><span class="fl-en">CareerForge</span><span class="fl-zh">鑄途</span></a>
+        <p>香港高端個人成長顧問。身份 · 升學 · 職涯身價 一站式陪跑。</p>
+      </div>
+      <div class="footer-col">
+        <h4>服務</h4>
+        <ul>
+          <li><a href="cases.html">身份與續簽對標</a></li>
+          <li><a href="cases.html">海外與香港升學</a></li>
+          <li><a href="cases.html">求職與身價躍遷</a></li>
+          <li><a href="cases.html">海外遊學團 5天4夜 / 7天6夜</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>資源</h4>
+        <ul>
+          <li><a href="cases.html">客戶案例</a></li>
+          <li><a href="#contact">聯絡我們</a></li>
+          <li><a href="#">私隱政策</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>聯絡</h4>
+        <ul>
+          <li><a href="https://wa.me/85296923498">WhatsApp</a></li>
+          <li><a href="mailto:info@careerforge-hk.com">info@careerforge-hk.com</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-v4-bottom">
-      <div>© 2026 CareerForge 鑄途 · BR 71508236</div>
-      <div class="footer-v4-audit"><a href="audit.html">Mobile Audit</a></div>    <div class="footer-v4-lang"><a href="cases.html" class="active">繁</a><a href="cases-cn.html">簡</a><a href="cases-en.html">EN</a></div>
+    <div class="footer-bottom">
+      <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
+      <span class="footer-audit"><a href="audit.html">Mobile Audit</a></span>    <span class="footer-lang">
+        <a href="index.html" class="active">繁體</a> · <a href="index-cn.html">簡體</a> · <a href="index-en.html">EN</a>
+      </span>
     </div>
   </div>
 </footer>
@@ -286,6 +428,19 @@
 
 <script>
 (function(){if(!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});})();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('navMenu');
+  if (hamburger && menu) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      menu.classList.toggle('active');
+    });
+  }
+});
 </script>
 </body>
 </html>

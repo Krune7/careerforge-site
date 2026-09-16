@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans" data-version="v18.9">
+<html lang="zh-Hans" data-version="v23.0.12a">
 <head>
   <script>
     // CareerForge v18.8+ iPhone Safari disk cache fix
@@ -7,7 +7,7 @@
     // This script uses fetch({cache: 'no-store'}) which iPhone Safari DOES honor,
     // then replaces current page if server-side version doesn't match expected.
     (function() {
-      var EXPECTED_VER = 'v18.9';
+      var EXPECTED_VER = 'v23.0.12a';
       var path = location.pathname + '?cb=' + Date.now();
       if (location.href.indexOf('cb=') !== -1) return;
       fetch(path, {cache: 'no-store'})
@@ -57,8 +57,6 @@
   --shadow-card: 0 4px 20px rgba(0,0,0,0.06);
   --shadow-deep: 0 16px 48px -12px rgba(11,25,44,0.28);
   --radius:      12px;
-  --green:       #047857;
-  --green-soft:  #ECFDF5;
 }
 * { box-sizing: border-box; }
 .v10-hero {
@@ -87,7 +85,7 @@
 .v10-hero::before {
   content: ""; position: absolute; top: -200px; right: -200px;
   width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(4,120,87,0.18) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, transparent 65%);
   border-radius: 50%;
 }
 .v10-hero::after {
@@ -100,21 +98,21 @@
 .v10-hero-eyebrow {
   display: inline-flex; align-items: center; gap: 12px;
   padding: 10px 22px;
-  border: 1px solid rgba(4,120,87,0.5);
+  border: 1px solid rgba(212,175,55,0.4);
   border-radius: 999px;
-  background: rgba(4,120,87,0.08);
+  background: rgba(212,175,55,0.06);
   font-size: 0.82rem; font-weight: 600;
   letter-spacing: 0.18em;
-  color: #6EE7B7;
+  color: var(--gold);
   margin-bottom: 36px;
 }
-.v10-hero-eyebrow-dot { width: 8px; height: 8px; background: #6EE7B7; border-radius: 50%; box-shadow: 0 0 12px #6EE7B7; }
+.v10-hero-eyebrow-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 12px var(--gold); }
 .v10-hero-title {
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
-  font-size: clamp(2.8rem, 7.2vw, 5.6rem);
+  font-size: clamp(2.6rem, 5.8vw, 4.8rem);
   font-weight: 700;
-  letter-spacing: 0.5px;
-  line-height: 1.15;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
   color: var(--white);
   margin: 0 0 32px;
   max-width: 980px;
@@ -168,7 +166,7 @@
   font-size: 0.78rem; font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--gold);
   margin-bottom: 18px;
 }
 .v10-head.dark .eyebrow { color: #7A5E12; }
@@ -176,7 +174,7 @@
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: clamp(2.2rem, 4.8vw, 3.6rem);
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   line-height: 1.18;
   color: var(--ink-900);
   margin: 0 0 22px;
@@ -211,8 +209,8 @@
   display: inline-flex;
   align-items: center; justify-content: center;
   width: 52px; height: 52px;
-  background: var(--green-soft);
-  color: var(--green);
+  background: rgba(212,175,55,0.06);
+  color: var(--gold);
   font-family: 'Playfair Display', serif;
   font-size: 1.4rem; font-weight: 700;
   border-radius: 12px;
@@ -246,7 +244,7 @@
 .v10-why-card {
   background: var(--white);
   border: 1px solid var(--ink-100);
-  border-left: 4px solid var(--green);
+  border-left: 4px solid var(--gold);
   border-radius: var(--radius);
   padding: 28px 24px;
   box-shadow: var(--shadow-card);
@@ -256,7 +254,7 @@
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 3.2vw, 2.8rem);
   font-weight: 700;
-  color: var(--green);
+  color: var(--gold);
   letter-spacing: -0.02em;
   line-height: 1;
   margin-bottom: 12px;
@@ -290,7 +288,7 @@
   display: inline-block;
   font-size: 0.72rem; font-weight: 700;
   letter-spacing: 0.18em;
-  color: var(--green);
+  color: var(--gold);
   margin-bottom: 14px;
 }
 .v10-pathway h3 {
@@ -330,7 +328,7 @@
 .v10-diff-label { font-weight: 700; color: var(--ink-900); background: var(--canvas); }
 .v10-diff-us { color: var(--ink-900); }
 .v10-diff-them { color: var(--ink-300); }
-.v10-diff-check { color: var(--green); font-weight: 700; margin-right: 6px; }
+.v10-diff-check { color: var(--gold); font-weight: 700; margin-right: 6px; }
 /* ============ CASES ============ */
 .v10-cases {
   display: grid;
@@ -391,7 +389,7 @@
 .v10-cta::before {
   content: ""; position: absolute; top: -150px; right: -150px;
   width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(4,120,87,0.15) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 65%);
   border-radius: 50%;
 }
 .v10-cta-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
@@ -406,7 +404,7 @@
   font-family: 'Playfair Display', 'Noto Serif SC', serif;
   font-size: clamp(1.8rem, 3.6vw, 2.6rem);
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.02em;
   line-height: 1.18;
   margin: 0 0 18px;
   text-wrap: balance;
@@ -455,8 +453,8 @@
   display: inline-flex;
   align-items: center; justify-content: center;
   width: 56px; height: 56px;
-  background: var(--green-soft);
-  color: var(--green);
+  background: rgba(212,175,55,0.06);
+  color: var(--gold);
   font-size: 1.6rem;
   border-radius: 50%;
   margin: 0 auto 16px;
@@ -561,8 +559,13 @@
   .v10-package-points li { padding: 6px 0 6px 22px; font-size: 0.82rem !important; line-height: 1.45; }
   .v10-package-tag { font-size: 0.65rem !important; padding: 3px 10px; margin-bottom: 10px; }
 }
+.v10-hero-title {
+  font-size: clamp(1.75rem, 7vw, 4.8rem) !important;
+  line-height: 1.18 !important;
+  max-width: 100% !important;
+}
+
 @media (max-width: 540px) {
-  .v10-hero-title { font-size: clamp(1.85rem, 8vw, 2.4rem) !important; }
   .v10-head h2 { font-size: clamp(1.6rem, 6vw, 2rem) !important; }
   .v10-why-grid, .footer-grid { grid-template-columns: 1fr; }
 }
@@ -581,6 +584,60 @@ img, video, iframe, table { max-width: 100%; }
   .v10-hero { padding-left: 0; padding-right: 0; }
   .v10-container { padding-left: 16px; padding-right: 16px; }
 }
+
+/* Site-header nav-menu + hamburger (canonical, matches index.html) */
+.site-header .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.site-header .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.site-header .hamburger span {
+  display: block;
+  height: 2px;
+  background: #0B192C;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.site-header .hamburger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.site-header .hamburger.active span:nth-child(2) { opacity: 0; }
+.site-header .hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+
+/* Mobile nav: show lang switcher pill + hamburger (overrides external style.css) */
+@media (max-width: 900px) {
+  .site-header .lang-switcher {
+    display: inline-flex !important;
+  }
+  .site-header .lang-switcher a {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    min-width: 24px;
+  }
+  .site-header .nav-logo .logo-en { font-size: 1.05rem !important; }
+  .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; }
+  .site-header .container { padding: 0 16px; }
+  .site-header .nav-menu { display: none; }
+  .site-header .hamburger {
+    display: flex !important;
+    min-width: 44px;
+    min-height: 44px;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+
 </style>
 <header class="site-header">
   <div class="container">
@@ -603,6 +660,9 @@ img, video, iframe, table { max-width: 100%; }
           <a href="career-cn.html" class="active">簡</a>
           <a href="career-en.html">EN</a>
         </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </div>
@@ -656,42 +716,42 @@ img, video, iframe, table { max-width: 100%; }
         <span class="v10-track-tag">RESUME · 简历强化</span>
         <h3>简历 + Cover Letter 精修</h3>
         <p>前全球頂尖科技 / 投行 / 戰略顧問公司 recruitment lead 亲自 review。中英文双版、ATS-friendly 格式、无限次修改。</p>
-        <span class="v10-track-tag" style="color:var(--green);">3x 面试回复</span>
+        <span class="v10-track-tag" style="color:var(--gold);">3x 面试回复</span>
       </div>
       <div class="v10-track">
         <span class="v10-track-icon">面</span>
         <span class="v10-track-tag">MOCK · 面试模拟</span>
         <h3>面试模拟 + 录像 review</h3>
         <p>Behavioural + Technical + Case interview 全部覆盖。真人 mock、录像回看、讲解拆题、逐题优化。</p>
-        <span class="v10-track-tag" style="color:var(--green);">6 场标准 package</span>
+        <span class="v10-track-tag" style="color:var(--gold);">6 场标准 package</span>
       </div>
       <div class="v10-track">
         <span class="v10-track-icon">薪</span>
         <span class="v10-track-tag">SALARY · 薪酬谈判</span>
         <h3>薪酬谈判 script + 市场数据</h3>
         <p>真实市场薪酬数据对标、提供完整谈判剧本、模拟 HR 反向议价 — 平均客户加薪 25–40%。</p>
-        <span class="v10-track-tag" style="color:var(--green);">+32% 加薪幅度</span>
+        <span class="v10-track-tag" style="color:var(--gold);">+32% 加薪幅度</span>
       </div>
       <div class="v10-track">
         <span class="v10-track-icon">猎</span>
         <span class="v10-track-tag">HEADHUNT · 猎头对接</span>
         <h3>8&nbsp;大行业猎头 network</h3>
         <p>覆盖金融、科技、医疗、法律、工程、教育、零售、制造业 — 30+ 一线猎头直接对接，绕过公开市场竞争。</p>
-        <span class="v10-track-tag" style="color:var(--green);">30+ 猎头网络</span>
+        <span class="v10-track-tag" style="color:var(--gold);">30+ 猎头网络</span>
       </div>
       <div class="v10-track">
         <span class="v10-track-icon">路</span>
         <span class="v10-track-tag">PATHWAY · 职涯规划</span>
         <h3>5&nbsp;年 / 10&nbsp;年职涯路径</h3>
         <p>针对个人目标 + 家庭状况 + 签证年限，量身定制 3-5-10 年职涯路径 — 包括行业选择、升职节奏、转行窗口。</p>
-        <span class="v10-track-tag" style="color:var(--green);">5-10 年规划</span>
+        <span class="v10-track-tag" style="color:var(--gold);">5-10 年规划</span>
       </div>
       <div class="v10-track">
         <span class="v10-track-icon">移</span>
         <span class="v10-track-tag">TRANSITION · 行业转型</span>
         <h3>跨行业转职全陪跑</h3>
         <p>已成家立业要转行？想转去金融 / 科技 / 法律？提供 background audit、技能差距分析、再培训路径、转职 timing 建议。</p>
-        <span class="v10-track-tag" style="color:var(--green);">平均 6 个月</span>
+        <span class="v10-track-tag" style="color:var(--gold);">平均 6 个月</span>
       </div>
     </div>
   </div>
@@ -886,7 +946,7 @@ img, video, iframe, table { max-width: 100%; }
         <h2>第一步：30&nbsp;分钟免费职涯评估</h2>
         <p>提交基本资料后 24 小时内收到顾问回覆 — 包含行业匹配度评分 + 预计所需时间 + 后续路径建议。</p>
         <div class="v10-cta-actions">
-          <a href="https://wa.me/85296966867" class="v10-cta-btn v10-cta-primary">WhatsApp 立即预约</a>
+          <a href="https://wa.me/85296923498" class="v10-cta-btn v10-cta-primary">WhatsApp 立即预约</a>
           <a href="consult.html" class="v10-cta-btn v10-cta-secondary">预约 30 分钟免费咨询</a>
         </div>
       </div>
@@ -897,24 +957,24 @@ img, video, iframe, table { max-width: 100%; }
 <section class="v10-section canvas tight" style="padding-top: 0;">
   <div class="v10-container">
     <div class="v10-head">
-      <span class="eyebrow">联络我们</span>
+      <span class="eyebrow">聯络我们</span>
       <h2>用你最方便的方式，<br>与顾问直接对话。</h2>
     </div>
     <div class="v10-contact-grid">
       <div class="v10-contact-card">
         <div class="v10-contact-icon">📱</div>
         <h4>WhatsApp / 微信</h4>
-        <p>852-9696-6867<br>顾问 24 小时内回覆</p>
+        <p>852-9692-3498<br>顾问 24 小时内回覆</p>
       </div>
       <div class="v10-contact-card">
-        <div class="v10-contact-icon">✉</div>
+        <div class="v10-contact-icon">✉️</div>
         <h4>电邮</h4>
-        <p>careerforgehk@gmail.com<br>提供书面方案摘要</p>
+        <p>info@careerforge-hk.com<br>提供書面方案摘要</p>
       </div>
       <div class="v10-contact-card">
-        <div class="v10-contact-icon">⌖</div>
+        <div class="v10-contact-icon">📍</div>
         <h4>香港办公室</h4>
-        <p>启德 · 尖沙咀<br>预约制 1 对 1 咨询</p>
+        <p>香港：启德 · 尖沙咀<br>佛山：世贸广场<br>预约制 1 对 1 咨询</p>
       </div>
     </div>
   </div>
@@ -923,30 +983,38 @@ img, video, iframe, table { max-width: 100%; }
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="footer-logo-text"><span class="fl-en">CareerForge</span><span class="fl-zh">铸途</span></a>
-        <p>香港高端个人成长顾问。身份、升学、职涯身价一站式陪跑。</p>
+        <a href="index-cn.html" class="footer-logo-text"><span class="fl-en">CareerForge</span><span class="fl-zh">铸途</span></a>
+        <p>香港高端个人成长顾问。身份 · 升学 · 职涯身价 一站式陪跑。</p>
       </div>
-      <div class="footer-col"><h4>服务</h4>
-        <a href="immigration-cn.html">身份与续签对标</a>
-        <a href="education-cn.html">海外与香港升学</a>
-        <a href="career-cn.html">求职与身价跃迁</a>
-        <a href="tour-cn.html">海外游学团 5天4夜 / 7天6夜</a>
+      <div class="footer-col">
+        <h4>服务</h4>
+        <ul>
+          <li><a href="career-cn.html">身份与续签对标</a></li>
+          <li><a href="education-cn.html">海外与香港升学</a></li>
+          <li><a href="career-cn.html">求职与身价跃迁</a></li>
+          <li><a href="tour-cn.html">海外游学团 5天4夜 / 7天6夜</a></li>
+        </ul>
       </div>
-      <div class="footer-col"><h4>资源</h4>
-        <a href="cases-cn.html">客户案例</a>
-        <a href="#contact">联络我们</a><a href="#">隐私政策</a>
+      <div class="footer-col">
+        <h4>资源</h4>
+        <ul>
+          <li><a href="cases-cn.html">客户案例</a></li>
+          <li><a href="#contact">联络我们</a></li>
+          <li><a href="#">隐私政策</a></li>
+        </ul>
       </div>
-      <div class="footer-col"><h4>联络</h4>
-        <a href="https://wa.me/85296966867">WhatsApp</a>
-        <a href="mailto:careerforgehk@gmail.com">careerforgehk@gmail.com</a>
+      <div class="footer-col">
+        <h4>联络</h4>
+        <ul>
+          <li><a href="https://wa.me/85296923498">WhatsApp</a></li>
+          <li><a href="mailto:info@careerforge-hk.com">info@careerforge-hk.com</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 CareerForge 铸途. All rights reserved.</span>
+      <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
       <span class="footer-audit"><a href="audit-cn.html">Mobile Audit</a></span>    <span class="footer-lang">
-        <a href="career.html" class="">繁體</a> ·
-        <a href="career-cn.html" class="active">简体</a> ·
-        <a href="career-en.html" class="">EN</a>
+        <a href="index.html">繁体</a> · <a href="index-cn.html" class="active">简体</a> · <a href="index-en.html">EN</a>
       </span>
     </div>
   </div>
@@ -963,5 +1031,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
+<a href="#contact" class="sticky-cta">💬 立即咨询</a>
+
 </body>
 </html>

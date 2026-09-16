@@ -437,8 +437,90 @@
 /* Page-level tweaks */
 .v10-lang-btn { transition: all .2s ease; }
 .v10-lang-btn:hover { border-color: var(--gold) !important; }
+
+/* Mobile nav: show lang switcher pill + hamburger */
+@media (max-width: 900px) {
+  .site-header .lang-switcher {
+    display: inline-flex !important;
+  }
+  .site-header .lang-switcher a {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    min-width: 24px;
+  }
+  .site-header .nav-logo .logo-en { font-size: 1.05rem !important; }
+  .site-header .nav-logo .logo-cn { font-size: 0.95rem !important; letter-spacing: 1px; }
+  .site-header .container { padding: 0 16px; }
+  .site-header .nav-menu { display: none; }
+  .site-header .hamburger {
+    display: flex !important;
+    min-width: 44px;
+    min-height: 44px;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+/* Site-header base + nav-menu + hamburger (canonical) */
+.site-header .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.site-header .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.site-header .hamburger span {
+  display: block;
+  height: 2px;
+  background: var(--ink-900, #0B192C);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.site-header .hamburger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.site-header .hamburger.active span:nth-child(2) { opacity: 0; }
+.site-header .hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
 </style>
 </head>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="index-cn.html" class="nav-logo">
+        <span class="logo-en">CareerForge</span>
+        <span class="logo-cn">鑄途</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index-cn.html" class="nav-link">首页</a>
+        <a href="immigration-cn.html" class="nav-link">身份规划</a>
+        <a href="education-cn.html" class="nav-link">升学规划</a>
+        <a href="career-cn.html" class="nav-link">求职身价</a>
+        <a href="tour-cn.html" class="nav-link">游学团</a>
+        <a href="#contact" class="nav-link">联络我们</a>
+      </div>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <a href="consult.html">繁</a>
+          <a href="consult-cn.html" class="active">簡</a>
+          <a href="consult-en.html">EN</a>
+        </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
 <body>
 
 <nav class="v10-nav" style="background: var(--white); border-bottom: 1px solid rgba(11, 25, 44, 0.08);">
@@ -521,7 +603,7 @@
           <p id="success-id" style="color: var(--gold-600); font-family: var(--font-serif); font-size: 0.95rem; margin-bottom: 24px; display: none;"></p>
           <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
             <a href="index.html" class="consult-btn consult-btn-next">返回首页</a>
-            <a href="https://wa.me/85296966867?text=你好，我刚完成 CareerForge 网站的初评表单，想跟进。" class="consult-btn consult-btn-back" target="_blank" rel="noopener">WhatsApp 直接联络 →</a>
+            <a href="https://wa.me/85296923498?text=你好，我刚完成 CareerForge 网站的初评表单，想跟进。" class="consult-btn consult-btn-back" target="_blank" rel="noopener">WhatsApp 直接联络 →</a>
           </div>
         </div>
       </div>
@@ -537,9 +619,46 @@
   </div>
 </section>
 
-<!-- ====== FOOTER (minimal) ====== -->
-<footer style="padding: 32px 0; border-top: 1px solid rgba(11,25,44,0.08); background: var(--white); text-align: center; color: var(--navy-300); font-size: 0.85rem;">
-  <div class="v10-container">CareerForge 铸途 · 香港高端人才引进顾问</div>
+<!-- ====== FOOTER (canonical, same as index-cn.html v10) ====== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index-cn.html" class="footer-logo-text"><span class="fl-en">CareerForge</span><span class="fl-zh">铸途</span></a>
+        <p>香港高端个人成长顾问。身份 · 升学 · 职涯身价 一站式陪跑。</p>
+      </div>
+      <div class="footer-col">
+        <h4>服务</h4>
+        <ul>
+          <li><a href="consult-cn.html">身份与续签对标</a></li>
+          <li><a href="consult-cn.html">海外与香港升学</a></li>
+          <li><a href="consult-cn.html">求职与身价跃迁</a></li>
+          <li><a href="consult-cn.html">海外游学团 5天4夜 / 7天6夜</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>资源</h4>
+        <ul>
+          <li><a href="cases-cn.html">客户案例</a></li>
+          <li><a href="#contact">联络我们</a></li>
+          <li><a href="#">隐私政策</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>联络</h4>
+        <ul>
+          <li><a href="https://wa.me/85296923498">WhatsApp</a></li>
+          <li><a href="mailto:info@careerforge-hk.com">info@careerforge-hk.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CareerForge 鑄途. All rights reserved.</span>
+      <span class="footer-audit"><a href="audit-cn.html">Mobile Audit</a></span>    <span class="footer-lang">
+        <a href="index.html">繁体</a> · <a href="index-cn.html" class="active">简体</a> · <a href="index-en.html">EN</a>
+      </span>
+    </div>
+  </div>
 </footer>
 
 <!-- Schema (always bilingual for client-side dynamic rendering) -->
